@@ -1,0 +1,21 @@
+# Render.com Blueprint — GitHub repo'ni ulasangiz, hammasi avtomatik sozlanadi.
+services:
+  - type: web
+    name: deutsch-school
+    runtime: docker
+    plan: starter            # doimiy disk uchun pullik reja kerak (bepul rejada ma'lumot o'chib ketadi)
+    healthCheckPath: /healthz
+    autoDeploy: true
+    disk:
+      name: school-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_USER
+        sync: false          # Render panelida qo'lda kiritasiz
+      - key: ADMIN_PASSWORD
+        sync: false          # Render panelida qo'lda kiritasiz

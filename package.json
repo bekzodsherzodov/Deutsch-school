@@ -1,0 +1,14 @@
+{
+  "name": "deutsch-school",
+  "version": "1.0.0",
+  "description": "Deutsch School — boshqaruv paneli (frontend + backend)",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "test": "node --test --test-concurrency=1 test/api.test.js",
+    "backup": "node server/backup.js"
+  }
+}
